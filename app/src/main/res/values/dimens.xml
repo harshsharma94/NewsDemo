@@ -2,4 +2,34 @@
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+    <!--Grid Conventions-->
+    <dimen name="grid_1_fourth">2dp</dimen>
+    <dimen name="grid_1_half">4dp</dimen>
+    <dimen name="grid_3_fourth">6dp</dimen>
+    <dimen name="grid_1">8dp</dimen>
+    <dimen name="grid_3_half">12dp</dimen>
+    <dimen name="grid_2">16dp</dimen>
+    <dimen name="grid_5_half">20dp</dimen>
+    <dimen name="grid_3">24dp</dimen>
+    <dimen name="grid_7_half">28dp</dimen>
+    <dimen name="grid_6">48dp</dimen>
+    <dimen name="grid_8">64dp</dimen>
+    <dimen name="grid_9">72dp</dimen>
+    <dimen name="grid_12">96dp</dimen>
+
+    <dimen name="font_xxxsmall">6sp</dimen>
+    <dimen name="font_xxsmall">8sp</dimen>
+    <dimen name="font_xsmall">10sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_medium">14sp</dimen>
+    <dimen name="font_large">16sp</dimen>
+    <dimen name="font_slarge">18sp</dimen>
+    <dimen name="font_xlarge">20sp</dimen>
+    <dimen name="font_xxlarge">24sp</dimen>
+    <dimen name="font_xxxlarge">28sp</dimen>
+    <dimen name="font_xxxxlarge">32sp</dimen>
+    <dimen name="max_width_message">240dp</dimen>
+
+    <dimen name="card_elevation">4dp</dimen>
 </resources>

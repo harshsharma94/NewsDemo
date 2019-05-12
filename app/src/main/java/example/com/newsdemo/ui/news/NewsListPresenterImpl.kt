@@ -15,6 +15,8 @@ class NewsListPresenterImpl @Inject constructor(val repository: Repository) : Ba
         const val LARGE_ITEM_INDEX = 3
     }
 
+    private val articles = mutableListOf<Articles>()
+
     override fun loadData() {
         val disposable = repository.getHeadLines(Country.IN.name)
             .subscribeOn(Schedulers.io())
@@ -33,6 +35,7 @@ class NewsListPresenterImpl @Inject constructor(val repository: Repository) : Ba
 
     private fun handleResponse(articles: List<Articles>) {
         val itemTypes = mutableListOf<NewsListAdapter.ItemType>()
+        this.articles.addAll(articles)
 
         for ((i, article) in articles.withIndex()) {
             with(article) {
@@ -61,5 +64,7 @@ class NewsListPresenterImpl @Inject constructor(val repository: Repository) : Ba
         this.view = view
     }
 
-
+    override fun onNewsClick(position: Int) {
+        view.launchNewsDetail(articles[position].url)
+    }
 }

@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import example.com.newsdemo.NewsDemoApplication
+import example.com.newsdemo.data.ImageHandler
 import kotlinx.android.extensions.LayoutContainer
 
 abstract class BaseViewHolder<T>(override val containerView: View) :
@@ -35,5 +37,9 @@ abstract class BaseViewHolder<T>(override val containerView: View) :
 
     fun getContext(): Context {
         return itemView.context
+    }
+
+    fun getImageHandler(): ImageHandler {
+        return (getContext().applicationContext as NewsDemoApplication).component.imageHandler()
     }
 }

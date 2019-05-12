@@ -30,7 +30,7 @@
               app:layout_constraintLeft_toLeftOf="parent"
               app:layout_constraintRight_toRightOf="parent"
               android:layout_height="0dp"
-              android:background="@android:color/darker_gray"/>
+              android:background="@drawable/gradient_text"/>
 
         <TextView
                 android:id="@+id/textTitleLarge"
@@ -41,7 +41,11 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_margin="@dimen/grid_2"
                 android:textSize="@dimen/font_xlarge"
-                tools:text="Some News Title"/>
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@android:color/white"
+                tools:text="Some News Title Some News Title Some News Title"/>
 
         <TextView
                 android:id="@+id/textDescLarge"
@@ -52,6 +56,9 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_margin="@dimen/grid_2"
                 android:textSize="@dimen/font_small"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@android:color/white"
                 tools:text="Some News Description"/>
 
         <TextView
@@ -63,6 +70,9 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_margin="@dimen/grid_2"
                 android:textSize="@dimen/font_xsmall"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@android:color/white"
                 tools:text="Some News Description"/>
 
 

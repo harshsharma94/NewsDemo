@@ -3,6 +3,7 @@ package example.com.newsdemo.di
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import example.com.newsdemo.NewsDemoApplication
+import example.com.newsdemo.data.ImageHandler
 import example.com.newsdemo.data.Repository
 import javax.inject.Singleton
 
@@ -11,6 +12,8 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun repository(): Repository
+
+    fun imageHandler(): ImageHandler
 
     fun inject(app: NewsDemoApplication)
 }

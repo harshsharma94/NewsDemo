@@ -22,6 +22,8 @@ class SmallNewsViewHolder(parent: ViewGroup) :
                     visibility = View.GONE
                 }
             }
+
+            getImageHandler().with(imgUrl, imageSmall)
         }
     }
 }

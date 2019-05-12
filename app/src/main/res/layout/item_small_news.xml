@@ -44,6 +44,7 @@
                 android:textSize="@dimen/font_xlarge"
                 android:maxLines="3"
                 android:ellipsize="end"
+                android:textStyle="bold"
                 tools:text="Some News Title"/>
 
         <TextView

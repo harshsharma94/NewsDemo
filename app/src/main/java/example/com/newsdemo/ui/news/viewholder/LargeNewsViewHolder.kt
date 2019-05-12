@@ -23,6 +23,8 @@ class LargeNewsViewHolder(parent: ViewGroup) :
                     visibility = View.VISIBLE
                 }
             }
+
+            getImageHandler().with(imgUrl, imageLarge)
         }
     }
 }

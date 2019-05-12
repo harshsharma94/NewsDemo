@@ -6,6 +6,10 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+androidExtensions {
+    experimental = true
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -42,6 +46,8 @@ dependencies {
     implementation 'com.google.dagger:dagger-android:2.22.1'
     implementation 'com.google.dagger:dagger-android-support:2.22.1' // if you use the support libraries
     kapt 'com.google.dagger:dagger-android-processor:2.22.1'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
     testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0'
     testImplementation 'junit:junit:4.12'

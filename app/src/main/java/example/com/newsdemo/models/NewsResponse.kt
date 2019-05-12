@@ -18,3 +18,8 @@ data class Source(
     val name: String
 )
 
+enum class Country(name: String) {
+    US("us"),
+    IN("in")
+}
+

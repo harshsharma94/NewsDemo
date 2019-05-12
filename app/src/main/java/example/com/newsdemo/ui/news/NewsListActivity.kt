@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import example.com.newsdemo.R
 import example.com.newsdemo.base.BaseActivity
+import example.com.newsdemo.base.BaseAdapter
+import example.com.newsdemo.ui.newsdetail.NewsDetailActivity
 import kotlinx.android.synthetic.main.activity_news_list.*
 import kotlinx.android.synthetic.main.content_news_list.*
 import javax.inject.Inject
@@ -23,7 +25,6 @@ class NewsListActivity : BaseActivity(), NewsListView {
         setContentView(R.layout.activity_news_list)
         setSupportActionBar(toolbar)
 
-
         getActivityComponent()?.inject(this)
 
         initView()
@@ -35,6 +36,14 @@ class NewsListActivity : BaseActivity(), NewsListView {
     }
 
     private fun initView() {
+        adapter.apply {
+            onClickListener = object : BaseAdapter.OnClickListener {
+                override fun onClick(view: View, position: Int) {
+                    presenter.onNewsClick(position)
+                }
+            }
+        }
+
         rvNewsList.apply {
             adapter = this@NewsListActivity.adapter
             layoutManager = LinearLayoutManager(this@NewsListActivity)
@@ -70,6 +79,12 @@ class NewsListActivity : BaseActivity(), NewsListView {
 
     override fun setItems(items: List<NewsListAdapter.ItemType>) {
         adapter.setItems(items)
+    }
+
+    override fun launchNewsDetail(url: String) {
+        NewsDetailActivity.createIntent(this, url).apply {
+            startActivity(this)
+        }
     }
 
     override fun showLoadingView(isLoading: Boolean) {

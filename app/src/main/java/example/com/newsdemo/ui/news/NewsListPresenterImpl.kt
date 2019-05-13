@@ -17,6 +17,10 @@ class NewsListPresenterImpl @Inject constructor(val repository: Repository) : Ba
 
     private val articles = mutableListOf<Articles>()
 
+    override fun refresh() {
+        loadData()
+    }
+
     override fun loadData() {
         val disposable = repository.getHeadLines(Country.IN.name)
             .subscribeOn(Schedulers.io())
@@ -30,7 +34,7 @@ class NewsListPresenterImpl @Inject constructor(val repository: Repository) : Ba
 
     override fun subscribe() {
         super.subscribe()
-        loadData()
+        refresh()
     }
 
     private fun handleResponse(articles: List<Articles>) {

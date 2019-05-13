@@ -1,6 +1,7 @@
 package example.com.newsdemo
 
 import android.app.Application
+import com.facebook.stetho.Stetho
 import example.com.newsdemo.di.AppComponent
 import example.com.newsdemo.di.AppModule
 import example.com.newsdemo.di.DaggerAppComponent
@@ -24,5 +25,6 @@ class NewsDemoApplication : Application() {
         component.inject(this)
 
         WebViewCacheInterceptorInst.getInstance().init(WebViewCacheInterceptor.Builder(this))
+        Stetho.initializeWithDefaults(this)
     }
 }

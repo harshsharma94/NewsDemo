@@ -2,7 +2,6 @@ package example.com.newsdemo.data
 
 import example.com.newsdemo.models.NewsResponse
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -31,9 +30,7 @@ class RepositoryImpl @Inject constructor(
             }
             .subscribeOn(Schedulers.io())
 
-        return Observable
-            .concat(articlesDB.toObservable(), articlesApi)
-            .observeOn(AndroidSchedulers.mainThread())
+        return articlesApi.onErrorResumeNext(articlesDB.toObservable())
     }
 
 }
